@@ -13,12 +13,23 @@ export default function AboutPage() {
       {/* Hero Section */}
       <div className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 border-b border-border/20">
         <div className="max-w-7xl mx-auto">
-          <div className="space-y-4 text-center">
+          <div className="space-y-6 text-center">
+            <div className="flex justify-center mb-4">
+              <div className="w-24 h-24 relative rounded-2xl bg-gradient-to-br from-red-500/20 to-black/40 backdrop-blur-xl p-2 shadow-2xl border border-red-500/30">
+                <Image 
+                  src="/AJ.svg" 
+                  alt="AJ STUDIOZ Logo" 
+                  width={80} 
+                  height={80}
+                  className="object-contain"
+                />
+              </div>
+            </div>
             <h1 className="text-4xl md:text-6xl font-bold glowing-brand">
               About AJ STUDIOZ
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Building the future of web development and AI technology solutions since 2020
+              Building the future of web development and AI technology solutions since 2023
             </p>
           </div>
         </div>
@@ -35,10 +46,10 @@ export default function AboutPage() {
                   AJ STUDIOZ was founded with a vision to bridge the gap between cutting-edge technology and practical business solutions. We started as a small team of passionate developers and have grown into a premium digital solutions provider.
                 </p>
                 <p>
-                  Our journey began with a simple belief: technology should empower businesses, not complicate them. Today, we serve clients across multiple industries, delivering exceptional web applications, AI integrations, and digital experiences.
+                  Our journey began with a simple belief: technology should empower businesses, not complicate them. In just over a year, we've made significant strides in serving clients across multiple industries, delivering exceptional web applications, AI integrations, and digital experiences.
                 </p>
                 <p>
-                  With expertise in modern frameworks, AI/ML technologies, and a commitment to excellence, we've successfully delivered 8+ projects reaching over 125K+ users worldwide.
+                  With expertise in modern frameworks, AI/ML technologies, and a commitment to excellence, we've successfully delivered 8+ projects reaching over 125K+ users worldwide in this short time.
                 </p>
               </div>
             </div>
@@ -53,7 +64,7 @@ export default function AboutPage() {
                       <Award className="w-8 h-8 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold">5+ Years</h3>
+                      <h3 className="text-2xl font-bold">1+ Year</h3>
                       <p className="text-muted-foreground">Industry Experience</p>
                     </div>
                   </div>
@@ -139,25 +150,22 @@ export default function AboutPage() {
           </div>
           <div className="grid md:grid-cols-4 gap-8">
             {[
-              { name: 'John Doe', role: 'Founder & CEO', image: '/professional-founder.jpg' },
-              { name: 'Sarah Wilson', role: 'Lead Developer', image: '/professional-woman.png' },
-              { name: 'Mike Chen', role: 'AI Specialist', image: '/professional-ai-researcher.jpg' },
-              { name: 'Emily Brown', role: 'UX Designer', image: '/professional-designer.jpg' }
+              { name: 'John Doe', role: 'Founder & CEO', gradient: 'from-blue-500 via-cyan-500 to-teal-500', icon: '👨‍💼' },
+              { name: 'Sarah Wilson', role: 'Lead Developer', gradient: 'from-purple-500 via-pink-500 to-rose-500', icon: '👩‍💻' },
+              { name: 'Mike Chen', role: 'AI Specialist', gradient: 'from-orange-500 via-amber-500 to-yellow-500', icon: '🤖' },
+              { name: 'Emily Brown', role: 'UX Designer', gradient: 'from-green-500 via-emerald-500 to-teal-500', icon: '🎨' }
             ].map((member, index) => (
               <div key={index} className="group relative overflow-hidden rounded-2xl border border-border/50 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl hover-elevate transition-all duration-500"
                 style={{
                   boxShadow: '0 4px 20px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05)'
                 }}>
-                <div className="aspect-square relative overflow-hidden">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60" />
+                <div className="aspect-square relative overflow-hidden flex items-center justify-center">
+                  <div className={`absolute inset-0 bg-gradient-to-br ${member.gradient} opacity-20 group-hover:opacity-30 transition-opacity duration-500`} />
+                  <div className={`relative w-32 h-32 rounded-full bg-gradient-to-br ${member.gradient} flex items-center justify-center text-6xl shadow-2xl group-hover:scale-110 transition-transform duration-500`}>
+                    {member.icon}
+                  </div>
                 </div>
-                <div className="p-6">
+                <div className="p-6 text-center">
                   <h3 className="text-lg font-bold mb-1">{member.name}</h3>
                   <p className="text-sm text-muted-foreground">{member.role}</p>
                 </div>
