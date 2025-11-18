@@ -14,15 +14,13 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-3">
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 relative glow-box rounded-lg overflow-hidden flex items-center justify-center bg-gradient-to-br from-primary to-accent">
-              <Image
-                src="/AJ.svg"
-                alt="AJ STUDIOZ Logo"
-                width={40}
-                height={40}
-                className="w-full h-full object-contain p-1"
-              />
-            </div>
+            <Image
+              src="/AJ.svg"
+              alt="AJ STUDIOZ Logo"
+              width={40}
+              height={40}
+              className="object-contain"
+            />
             <span className="text-base md:text-lg font-bold rgb-flashing">
               AJ STUDIOZ
             </span>

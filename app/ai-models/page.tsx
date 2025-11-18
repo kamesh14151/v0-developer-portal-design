@@ -42,7 +42,7 @@ export default function AIModelsPage() {
       <div className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 border-b border-border/20">
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-center mb-4">
-            <div className="w-20 h-20 relative rounded-2xl bg-gradient-to-br from-red-500/20 to-black/40 backdrop-blur-xl p-2 shadow-2xl border border-red-500/30">
+            <div className="w-20 h-20 relative rounded-full bg-gradient-to-br from-cyan-500/30 via-blue-500/30 to-purple-500/30 backdrop-blur-xl p-3 shadow-2xl border-2 border-cyan-500/40">
               <Image 
                 src="/AJ.svg" 
                 alt="AJ STUDIOZ Logo" 

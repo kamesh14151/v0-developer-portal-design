@@ -106,7 +106,7 @@ export default function CareersPage() {
         <div className="max-w-7xl mx-auto">
           <div className="space-y-6 text-center">
             <div className="flex justify-center mb-4">
-              <div className="w-20 h-20 relative rounded-2xl bg-gradient-to-br from-red-500/20 to-black/40 backdrop-blur-xl p-2 shadow-2xl border border-red-500/30 magnetic-hover">
+              <div className="w-20 h-20 relative rounded-full bg-gradient-to-br from-amber-500/30 via-orange-500/30 to-red-500/30 backdrop-blur-xl p-3 shadow-2xl border-2 border-amber-500/40 magnetic-hover">
                 <Image 
                   src="/AJ.svg" 
                   alt="AJ STUDIOZ Logo" 
