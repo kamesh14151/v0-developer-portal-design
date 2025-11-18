@@ -12,66 +12,66 @@ export default function ProjectsPage() {
 
   const projects = [
     {
-      title: 'MVK Transports',
+      title: 'Advanced Transport Solutions - MVK Transports',
       category: 'business',
-      description: 'Professional multi-page business website for transport company with service details and contact information.',
-      tech: ['Next.js', 'React', 'Tailwind CSS'],
+      description: 'Comprehensive logistics platform with real-time GPS tracking, live vehicle monitoring, fleet management, instant pricing calculator, and automated booking system. Features 24/7 support and insurance coverage for goods transportation and relocation services.',
+      tech: ['Next.js', 'React', 'Tailwind CSS', 'GPS Tracking', 'Real-time Updates'],
       image: '/project-mvk.jpg',
       url: 'https://mvk-transports.vercel.app/'
     },
     {
-      title: 'CGPA Calculator',
+      title: 'GPA & CGPA Calculator',
       category: 'education',
-      description: 'Smart GPA calculation tool with real-time tracking and academic performance analytics.',
-      tech: ['React', 'JavaScript', 'Tailwind CSS'],
+      description: 'Smart academic performance calculator supporting multiple engineering branches including Computer Science, AI & Machine Learning, Electronics, and more. Features grade distribution visualization, arrears tracking, and instant CGPA computation with credit management.',
+      tech: ['React', 'JavaScript', 'Tailwind CSS', 'Data Visualization'],
       image: '/project-cgpa.jpg',
       url: 'https://cgpa-calc-aj.vercel.app/'
     },
     {
-      title: 'Meow Store',
+      title: 'Meow Store - E-Commerce Platform',
       category: 'ecommerce',
-      description: 'Modern e-commerce platform with product catalog, shopping cart, and secure checkout.',
-      tech: ['Next.js', 'Stripe', 'MongoDB'],
+      description: 'Modern e-commerce platform with advanced product catalog, shopping cart functionality, secure checkout process, inventory management, and customer authentication system.',
+      tech: ['Next.js', 'React', 'Tailwind CSS', 'Payment Integration'],
       image: '/project-meow.jpg',
       url: 'https://www.meow.ajstudioz.co.in/'
     },
     {
-      title: 'Tomo Academy Chat',
+      title: 'TOMO AI Buddy - Intelligent Chat Assistant',
       category: 'education',
-      description: 'Real-time chat platform for educational collaboration and peer learning.',
-      tech: ['Next.js', 'Socket.io', 'Firebase'],
+      description: 'Advanced AI-powered chat platform with web search capabilities, real-time data access, and intelligent responses. Features context-aware conversations, model selection, and comprehensive development assistance for research and coding help.',
+      tech: ['Next.js', 'AI/ML', 'Real-time Chat', 'Web Search API'],
       image: '/project-tomo-chat.jpg',
       url: 'https://chat.tm.tomoacademy.site'
     },
     {
-      title: 'Tomo Academy Platform',
+      title: 'TOMO Academy - AI Development Platform',
       category: 'education',
-      description: 'Comprehensive learning management system with courses, assessments, and progress tracking.',
-      tech: ['Next.js', 'PostgreSQL', 'React'],
+      description: 'AI-powered development platform empowering creators to transform ideas into reality. Features intelligent code generation with React/TypeScript, shadcn/ui integration, multimodal AI for design-to-code conversion, and advanced Qwen2.5 Coder model support.',
+      tech: ['Next.js', 'AI Code Gen', 'React', 'TypeScript', 'shadcn/ui'],
       image: '/project-tomo-academy.jpg',
       url: 'https://dev.tomoacademy.site/'
     },
     {
-      title: 'cURL Tester',
+      title: 'Professional cURL Tester',
       category: 'developer-tools',
-      description: 'Advanced API testing tool for developers with request history and response formatting.',
-      tech: ['React', 'TypeScript', 'Fetch API'],
+      description: 'Advanced API testing tool with request history management, cURL command builder, syntax highlighting, AI-enhanced suggestions, and comprehensive response formatting. Features one-click command copying and real-time request tracking.',
+      tech: ['React', 'TypeScript', 'API Testing', 'AI Enhancement'],
       image: '/project-curl.jpg',
       url: 'https://v0-aj-studioz-curl-tester-edmp.vercel.app/'
     },
     {
-      title: 'Tomo Forge Hub',
+      title: 'TOMO Forge Hub - Content Management System',
       category: 'developer-tools',
-      description: 'Development toolkit and resource hub for collaborative project management.',
-      tech: ['Next.js', 'Node.js', 'MongoDB'],
+      description: 'Comprehensive internal platform managing 14+ team members and 234+ videos for 125K+ subscribers. Features digital employee profiles with QR codes, Kanban task board, YouTube content hub, analytics dashboard, role-based access control, and automated workflows.',
+      tech: ['Next.js', 'Firebase Auth', 'YouTube API', 'Task Management', 'Analytics'],
       image: '/project-forge.jpg',
       url: 'https://tomo-forge-hub.vercel.app/'
     },
     {
-      title: 'IB Resource Hub',
+      title: 'IB STUDIOZ - Enterprise Learning Platform',
       category: 'education',
-      description: 'Centralized repository of IB study materials and learning resources.',
-      tech: ['Next.js', 'Firebase', 'React'],
+      description: 'Enterprise-grade learning management system with Microsoft authentication, corporate account integration, secure access control, comprehensive resource hub, and dedicated support for International Baccalaureate programs.',
+      tech: ['Next.js', 'Microsoft Auth', 'Firebase', 'Enterprise Security'],
       image: '/project-ib.jpg',
       url: 'https://ib-online-resource-hub.vercel.app/'
     },
@@ -133,38 +133,47 @@ export default function ProjectsPage() {
             {filtered.map((project, index) => (
               <div
                 key={index}
-                className="card-premium border border-border/30 overflow-hidden group hover:border-primary/40 flex flex-col"
+                className="group relative overflow-hidden rounded-2xl border border-border/50 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-xl hover:border-primary/50 transition-all duration-500 hover-elevate flex flex-col"
+                style={{
+                  boxShadow: '0 4px 24px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05)'
+                }}
               >
+                {/* Glow effect on hover */}
+                <div className="absolute -inset-[1px] bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500" />
+                
                 {/* Project Image */}
-                <div className="relative h-48 overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20">
+                <div className="relative h-56 overflow-hidden bg-gradient-to-br from-primary/20 via-accent/10 to-transparent">
                   <Image
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
                     fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60" />
-                </div>
-
-                {/* Project Info */}
-                <div className="p-6 flex flex-col flex-grow">
-                  <div className="mb-3">
-                    <span className="text-xs font-semibold text-primary uppercase tracking-widest">
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
+                  
+                  {/* Category Badge */}
+                  <div className="absolute top-4 left-4">
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-primary/90 backdrop-blur-sm text-xs font-bold text-primary-foreground uppercase tracking-wider shadow-lg">
                       {project.category.replace('-', ' ')}
                     </span>
                   </div>
+                </div>
 
-                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                  <p className="text-sm text-muted-foreground mb-4 flex-grow">
+                {/* Project Info */}
+                <div className="relative p-6 flex flex-col flex-grow">
+                  <h3 className="text-xl font-bold mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-accent transition-all duration-300">
+                    {project.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground mb-6 flex-grow leading-relaxed">
                     {project.description}
                   </p>
 
                   {/* Tech Stack */}
-                  <div className="flex flex-wrap gap-2 mb-6">
+                  <div className="flex flex-wrap gap-2 mb-6 pb-6 border-b border-border/30">
                     {project.tech.map((tech, idx) => (
                       <span
                         key={idx}
-                        className="text-xs px-2 py-1 rounded bg-primary/10 text-primary"
+                        className="text-xs px-3 py-1.5 rounded-full bg-gradient-to-r from-primary/10 to-accent/10 text-primary border border-primary/20 font-medium"
                       >
                         {tech}
                       </span>
@@ -176,9 +185,11 @@ export default function ProjectsPage() {
                     href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium text-sm group/link"
+                    className="relative flex items-center justify-center gap-2 py-3 px-6 rounded-xl bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 hover:from-primary hover:via-accent hover:to-primary text-primary hover:text-primary-foreground transition-all duration-500 font-semibold text-sm border border-primary/20 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/20 overflow-hidden group/btn"
                   >
-                    View Project <ExternalLink size={16} className="group-hover/link:translate-x-1 transition-transform" />
+                    <span className="relative z-10">View Live Project</span>
+                    <ExternalLink size={16} className="relative z-10 group-hover/btn:translate-x-1 group-hover/btn:scale-110 transition-transform" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-200%] group-hover/btn:translate-x-[200%] transition-transform duration-700" />
                   </a>
                 </div>
               </div>
@@ -192,16 +203,24 @@ export default function ProjectsPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-6 text-center">
             {[
-              { number: '8+', label: 'Projects Delivered' },
-              { number: '100%', label: 'Client Satisfaction' },
-              { number: '5+', label: 'Industries Served' },
-              { number: '0', label: 'Missed Deadlines' },
+              { number: '8+', label: 'Projects Delivered', color: 'from-blue-500 to-cyan-500' },
+              { number: '125K+', label: 'Users Reached', color: 'from-purple-500 to-pink-500' },
+              { number: '5+', label: 'Industries Served', color: 'from-orange-500 to-yellow-500' },
+              { number: '99%', label: 'Platform Uptime', color: 'from-green-500 to-emerald-500' },
             ].map((stat, idx) => (
-              <div key={idx} className="card-premium p-6">
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
-                  {stat.number}
+              <div key={idx} className="relative overflow-hidden rounded-2xl border border-border/50 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl p-8 group hover-elevate transition-all duration-500"
+                style={{
+                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05)'
+                }}>
+                {/* Animated gradient background */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+                
+                <div className="relative">
+                  <div className={`text-4xl md:text-5xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-3 group-hover:scale-110 transition-transform duration-500`}>
+                    {stat.number}
+                  </div>
+                  <p className="text-sm text-muted-foreground font-medium">{stat.label}</p>
                 </div>
-                <p className="text-sm text-muted-foreground">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -210,14 +229,27 @@ export default function ProjectsPage() {
 
       {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto card-premium p-8 md:p-12 text-center border border-primary/20">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Want to Start Your Project?</h2>
-          <p className="text-muted-foreground mb-8 text-lg">
-            Let's create something amazing together
-          </p>
-          <Link href="/" className="inline-block px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-all btn-luxury">
-            Get in Touch
-          </Link>
+        <div className="max-w-4xl mx-auto relative overflow-hidden rounded-3xl border border-primary/30 bg-gradient-to-br from-card/90 via-card/70 to-card/50 backdrop-blur-xl p-8 md:p-16 text-center group"
+          style={{
+            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
+          }}>
+          {/* Animated background */}
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 opacity-50 group-hover:opacity-100 transition-opacity duration-700" />
+          <div className="absolute -inset-[2px] bg-gradient-to-r from-primary/30 via-accent/30 to-primary/30 rounded-3xl opacity-0 group-hover:opacity-100 blur-2xl transition-opacity duration-700" />
+          
+          <div className="relative z-10">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 glowing-brand">
+              Want to Start Your Project?
+            </h2>
+            <p className="text-muted-foreground mb-10 text-lg md:text-xl max-w-2xl mx-auto">
+              Let's create something amazing together. Transform your vision into reality with our expertise.
+            </p>
+            <Link href="/" className="relative inline-flex items-center justify-center px-10 py-4 bg-gradient-to-r from-primary via-accent to-primary text-primary-foreground rounded-xl font-bold text-lg overflow-hidden group/btn shadow-2xl shadow-primary/30 hover:shadow-primary/50 transition-all duration-500 hover:scale-105">
+              <span className="relative z-10">Get in Touch</span>
+              <ArrowRight className="relative z-10 ml-2 group-hover/btn:translate-x-2 transition-transform" size={20} />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover/btn:translate-x-[200%] transition-transform duration-700" />
+            </Link>
+          </div>
         </div>
       </section>
 
