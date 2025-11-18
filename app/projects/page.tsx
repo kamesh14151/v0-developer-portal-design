@@ -28,10 +28,10 @@ export default function ProjectsPage() {
       url: 'https://cgpa-calc-aj.vercel.app/'
     },
     {
-      title: 'Meow Store - E-Commerce Platform',
-      category: 'ecommerce',
-      description: 'Modern e-commerce platform with advanced product catalog, shopping cart functionality, secure checkout process, inventory management, and customer authentication system.',
-      tech: ['Next.js', 'React', 'Tailwind CSS', 'Payment Integration'],
+      title: 'Meow Chat - Real-time Messaging Platform',
+      category: 'social',
+      description: 'Modern real-time chat application with instant messaging, user authentication, online status tracking, message notifications, and seamless communication features for personal and group conversations.',
+      tech: ['Next.js', 'Real-time Chat', 'WebSocket', 'Firebase', 'Tailwind CSS'],
       image: '/project-meow.jpg',
       url: 'https://www.meow.ajstudioz.co.in/'
     },
@@ -81,7 +81,7 @@ export default function ProjectsPage() {
     { value: 'all', label: 'All Projects' },
     { value: 'business', label: 'Business' },
     { value: 'education', label: 'Education' },
-    { value: 'ecommerce', label: 'E-Commerce' },
+    { value: 'social', label: 'Social & Chat' },
     { value: 'developer-tools', label: 'Developer Tools' },
   ]
 
