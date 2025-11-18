@@ -7,22 +7,28 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'AJ STUDIOZ | Premium Web Development & AI Solutions',
+  title: 'AJ STUDIOZ | Technologies',
   description: 'Premium web development and AI technology solutions. Discover Nexariq AI models: Lynxa-mini, AJ, and Hanuman S1.',
   generator: 'v0.app',
   icons: {
-    icon: '/AJ.svg',
-    apple: '/AJ.svg',
+    icon: [
+      { url: '/AJ.svg', sizes: '32x32', type: 'image/svg+xml' },
+      { url: '/AJ.svg', sizes: '192x192', type: 'image/svg+xml' },
+      { url: '/AJ.svg', sizes: '512x512', type: 'image/svg+xml' },
+    ],
+    apple: [
+      { url: '/AJ.svg', sizes: '180x180', type: 'image/svg+xml' },
+    ],
     shortcut: '/AJ.svg',
   },
   openGraph: {
-    title: 'AJ STUDIOZ | Premium Web Development & AI Solutions',
+    title: 'AJ STUDIOZ | Technologies',
     description: 'Premium web development and AI technology solutions. Discover Nexariq AI models: Lynxa-mini, AJ, and Hanuman S1.',
     images: ['/AJ.svg'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AJ STUDIOZ | Premium Web Development & AI Solutions',
+    title: 'AJ STUDIOZ | Technologies',
     description: 'Premium web development and AI technology solutions. Discover Nexariq AI models: Lynxa-mini, AJ, and Hanuman S1.',
     images: ['/AJ.svg'],
   },
