@@ -14,9 +14,13 @@ export default function Footer() {
           {/* Brand section */}
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4 group">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center group-hover:shadow-lg transition-all">
-                <span className="text-sm font-bold text-white">AJ</span>
-              </div>
+              <Image
+                src="/AJ.svg"
+                alt="AJ STUDIOZ Logo"
+                width={40}
+                height={40}
+                className="object-contain"
+              />
               <span className="font-bold text-lg">AJ STUDIOZ</span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">
