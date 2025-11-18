@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Screenshots - Enhanced</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #000;
+            padding: 20px;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .screenshot {
+            width: 1920px;
+            height: 1080px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0;
+            page-break-after: always;
+        }
+        
+        .gradient-bg {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        
+        .browser-chrome {
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .dots {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .dot.red { background: #ef4444; }
+        .dot.yellow { background: #f59e0b; }
+        .dot.green { background: #10b981; }
+        
+        .url-bar {
+            flex: 1;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 12px 20px;
+            color: #94a3b8;
+            font-size: 14px;
+        }
+        
+        .content {
+            position: relative;
+            height: calc(100% - 60px);
+            overflow: hidden;
+        }
+        
+        /* MVK Transport Styles */
+        .mvk .content {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .mvk h1 {
+            font-size: 96px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 30px;
+            line-height: 1.1;
+        }
+        
+        .mvk .subtitle {
+            font-size: 32px;
+            color: #94a3b8;
+            margin-bottom: 60px;
+            max-width: 900px;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .feature-card {
+            background: rgba(59, 130, 246, 0.1);
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .feature-card .icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 28px;
+            color: #3b82f6;
+            margin-bottom: 10px;
+        }
+        
+        .feature-card p {
+            color: #94a3b8;
+            font-size: 16px;
+        }
+        
+        /* CGPA Calculator */
+        .cgpa .content {
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4c1d95 100%);
+            padding: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .calculator-box {
+            background: rgba(139, 92, 246, 0.1);
+            border: 2px solid rgba(139, 92, 246, 0.4);
+            border-radius: 30px;
+            padding: 60px;
+            width: 900px;
+        }
+        
+        .calculator-box h2 {
+            font-size: 48px;
+            color: white;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .grade-input-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .input-field {
+            background: rgba(139, 92, 246, 0.2);
+            border: 2px solid rgba(139, 92, 246, 0.4);
+            border-radius: 15px;
+            padding: 25px;
+            color: white;
+            font-size: 20px;
+        }
+        
+        .result-box {
+            background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
+            border-radius: 25px;
+            padding: 60px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .result-box .cgpa-value {
+            font-size: 120px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 15px;
+        }
+        
+        .result-box .label {
+            font-size: 28px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* AI Chat Assistant (Meow) */
+        .meow-ai .content {
+            background: linear-gradient(135deg, #18181b 0%, #27272a 50%, #3f3f46 100%);
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .chat-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .chat-header h1 {
+            font-size: 72px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ec4899 0%, #f43f5e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+        
+        .chat-header p {
+            font-size: 24px;
+            color: #a1a1aa;
+        }
+        
+        .chat-window {
+            background: rgba(24, 24, 27, 0.6);
+            border: 2px solid rgba(236, 72, 153, 0.3);
+            border-radius: 25px;
+            padding: 40px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .message-bubble {
+            background: rgba(236, 72, 153, 0.15);
+            border: 1px solid rgba(236, 72, 153, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 80%;
+        }
+        
+        .message-bubble.ai {
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.2) 0%, rgba(244, 63, 94, 0.2) 100%);
+            align-self: flex-start;
+        }
+        
+        .message-bubble.user {
+            background: rgba(59, 130, 246, 0.15);
+            border-color: rgba(59, 130, 246, 0.3);
+            align-self: flex-end;
+        }
+        
+        .message-bubble .text {
+            color: #e4e4e7;
+            font-size: 20px;
+            line-height: 1.6;
+        }
+        
+        .message-bubble .label {
+            color: #ec4899;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Tomo AI Chat */
+        .tomo-chat .content {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%);
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .tomo-chat .chat-header h1 {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Tomo Academy */
+        .tomo-academy .content {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            padding: 80px;
+        }
+        
+        .hero-section {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .hero-section h1 {
+            font-size: 84px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 30px;
+        }
+        
+        .hero-section p {
+            font-size: 28px;
+            color: #94a3b8;
+        }
+        
+        .code-preview {
+            background: rgba(15, 23, 42, 0.8);
+            border: 2px solid rgba(99, 102, 241, 0.4);
+            border-radius: 20px;
+            padding: 40px;
+            font-family: 'Courier New', monospace;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #e2e8f0;
+        }
+        
+        .code-line { margin-bottom: 10px; }
+        .keyword { color: #f472b6; }
+        .function { color: #60a5fa; }
+        .string { color: #34d399; }
+        .comment { color: #64748b; }
+        
+        /* cURL Tester */
+        .curl .content {
+            background: linear-gradient(135deg, #18181b 0%, #27272a 100%);
+            padding: 80px;
+        }
+        
+        .curl h1 {
+            font-size: 72px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 30px;
+        }
+        
+        .terminal-window {
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid rgba(245, 158, 11, 0.4);
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 40px;
+            font-family: 'Courier New', monospace;
+            font-size: 18px;
+        }
+        
+        .terminal-line {
+            color: #10b981;
+            margin-bottom: 15px;
+        }
+        
+        .prompt {
+            color: #f59e0b;
+        }
+        
+        /* Forge Hub */
+        .forge .content {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            padding: 80px;
+        }
+        
+        .forge h1 {
+            font-size: 84px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 40px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .stat-card {
+            background: rgba(6, 182, 212, 0.1);
+            border: 2px solid rgba(6, 182, 212, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .stat-card .value {
+            font-size: 56px;
+            font-weight: 800;
+            color: #06b6d4;
+            margin-bottom: 15px;
+        }
+        
+        .stat-card .label {
+            color: #94a3b8;
+            font-size: 18px;
+        }
+        
+        /* IB Hub */
+        .ib .content {
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+            padding: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .login-box {
+            background: rgba(99, 102, 241, 0.1);
+            border: 2px solid rgba(99, 102, 241, 0.4);
+            border-radius: 30px;
+            padding: 80px;
+            width: 700px;
+            text-align: center;
+        }
+        
+        .login-box h1 {
+            font-size: 64px;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .login-box p {
+            font-size: 24px;
+            color: #a5b4fc;
+            margin-bottom: 50px;
+        }
+        
+        .login-btn {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            border: none;
+            border-radius: 15px;
+            padding: 25px 60px;
+            color: white;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        
+        @media print {
+            body { background: white; }
+            .screenshot { page-break-after: always; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- MVK Transports -->
+        <div class="screenshot mvk" id="mvk">
+            <div class="browser-chrome">
+                <div class="dots">
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+                </div>
+                <div class="url-bar">🔒 https://mvk-transports.vercel.app</div>
+            </div>
+            <div class="content">
+                <h1>Advanced Transport<br/>Solutions</h1>
+                <p class="subtitle">Reliable • Efficient • Technology-Driven logistics services with real-time GPS tracking and 24/7 support</p>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="icon">📍</div>
+                        <h3>GPS Tracking</h3>
+                        <p>Live Location</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">🚚</div>
+                        <h3>Fleet</h3>
+                        <p>Modern Vehicles</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">⏰</div>
+                        <h3>24/7</h3>
+                        <p>Support</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">✅</div>
+                        <h3>5+ Years</h3>
+                        <p>Experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CGPA Calculator -->
+        <div class="screenshot cgpa" id="cgpa">
+            <div class="browser-chrome">
+                <div class="dots">
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+                </div>
+                <div class="url-bar">🔒 https://cgpa-calc-aj.vercel.app</div>
+            </div>
+            <div class="content">
+                <div class="calculator-box">
+                    <h2>GPA & CGPA Calculator</h2>
+                    <div class="grade-input-row">
+                        <div class="input-field">Data Structures</div>
+                        <div class="input-field">4 Credits</div>
+                        <div class="input-field">A Grade</div>
+                    </div>
+                    <div class="grade-input-row">
+                        <div class="input-field">Algorithms</div>
+                        <div class="input-field">4 Credits</div>
+                        <div class="input-field">A+ Grade</div>
+                    </div>
+                    <div class="grade-input-row">
+                        <div class="input-field">Web Development</div>
+                        <div class="input-field">3 Credits</div>
+                        <div class="input-field">A Grade</div>
+                    </div>
+                    <div class="result-box">
+                        <div class="cgpa-value">8.85</div>
+                        <div class="label">Overall CGPA</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Meow AI -->
+        <div class="screenshot meow-ai" id="meow">
+            <div class="browser-chrome">
+                <div class="dots">
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+                </div>
+                <div class="url-bar">🔒 https://www.meow.ajstudioz.co.in</div>
+            </div>
+            <div class="content">
+                <div class="chat-header">
+                    <h1>Meow AI Assistant</h1>
+                    <p>Intelligent conversations powered by advanced AI • Like ChatGPT & Perplexity</p>
+                </div>
+                <div class="chat-window">
+                    <div class="message-bubble user">
+                        <div class="label">You</div>
+                        <div class="text">Can you help me understand how neural networks work?</div>
+                    </div>
+                    <div class="message-bubble ai">
+                        <div class="label">Meow AI</div>
+                        <div class="text">I'd be happy to explain neural networks! Think of them as a system inspired by the human brain. They consist of interconnected nodes (neurons) organized in layers that process information. Each connection has a weight that gets adjusted during training...</div>
+                    </div>
+                    <div class="message-bubble user">
+                        <div class="label">You</div>
+                        <div class="text">That's helpful! Can you provide a code example in Python?</div>
+                    </div>
+                    <div class="message-bubble ai">
+                        <div class="label">Meow AI</div>
+                        <div class="text">Absolutely! Here's a simple neural network implementation using TensorFlow...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tomo AI Chat -->
+        <div class="screenshot tomo-chat" id="tomo-chat">
+            <div class="browser-chrome">
+                <div class="dots">
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+                </div>
+                <div class="url-bar">🔒 https://chat.tm.tomoacademy.site</div>
+            </div>
+            <div class="content">
+                <div class="chat-header">
+                    <h1>TOMO AI Buddy</h1>
+                    <p>Advanced AI with Web Search • Real-time Data • Intelligent Responses</p>
+                </div>
+                <div class="chat-window">
+                    <div class="message-bubble user">
+                        <div class="label">You</div>
+                        <div class="text">Search the web for the latest news about AI developments</div>
+                    </div>
+                    <div class="message-bubble ai">
+                        <div class="label">TOMO AI</div>
+                        <div class="text">🔍 Searching the web... I've found several recent developments in AI. OpenAI recently announced improvements to GPT-4, Google introduced Gemini with multimodal capabilities, and there's growing focus on AI safety regulations...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tomo Academy -->
+        <div class="screenshot tomo-academy" id="tomo-academy">
+            <div class="browser-chrome">
+                <div class="dots">
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+                </div>
+                <div class="url-bar">🔒 https://dev.tomoacademy.site</div>
+            </div>
+            <div class="content">
+                <div class="hero-section">
+                    <h1>TOMO Academy</h1>
+                    <p>AI-Powered Development Platform • Turn Your Vision Into Reality</p>
+                </div>
+                <div class="code-preview">
+                    <div class="code-line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></div>
+                    <div class="code-line"><span class="keyword">import</span> { Button } <span class="keyword">from</span> <span class="string">'@/components/ui/button'</span></div>
+                    <div class="code-line">&nbsp;</div>
+                    <div class="code-line"><span class="keyword">export default function</span> <span class="function">LandingPage</span>() {</div>
+                    <div class="code-line">&nbsp;&nbsp;<span class="keyword">return</span> (</div>
+                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="function">div</span> <span class="keyword">className</span>=<span class="string">"hero-section"</span>&gt;</div>
+                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="function">h1</span>&gt;Welcome to AI Development&lt;/<span class="function">h1</span>&gt;</div>
+                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="function">Button</span>&gt;Get Started&lt;/<span class="function">Button</span>&gt;</div>
+                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="function">div</span>&gt;</div>
+                    <div class="code-line">&nbsp;&nbsp;)</div>
+                    <div class="code-line">}</div>
+                    <div class="code-line">&nbsp;</div>
+                    <div class="code-line"><span class="comment">// Generated with TOMO AI - Qwen2.5 Coder 32B Model</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- cURL Tester -->
+        <div class="screenshot curl" id="curl">
+            <div class="browser-chrome">
+                <div class="dots">
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+                </div>
+                <div class="url-bar">🔒 https://v0-aj-studioz-curl-tester-edmp.vercel.app</div>
+            </div>
+            <div class="content">
+                <h1>Professional cURL Tester</h1>
+                <p style="font-size: 28px; color: #a1a1aa; margin-bottom: 40px;">Advanced API Testing Tool with AI Enhancement</p>
+                <div class="terminal-window">
+                    <div class="terminal-line"><span class="prompt">$</span> curl -X POST https://api.example.com/users \</div>
+                    <div class="terminal-line">&nbsp;&nbsp;-H "Content-Type: application/json" \</div>
+                    <div class="terminal-line">&nbsp;&nbsp;-H "Authorization: Bearer token123" \</div>
+                    <div class="terminal-line">&nbsp;&nbsp;-d '{"name": "John Doe", "email": "john@example.com"}'</div>
+                    <div class="terminal-line">&nbsp;</div>
+                    <div class="terminal-line" style="color: #34d399;">✓ Request sent successfully</div>
+                    <div class="terminal-line" style="color: #60a5fa;">Response: 200 OK</div>
+                    <div class="terminal-line">&nbsp;</div>
+                    <div class="terminal-line">{"id": "123", "name": "John Doe", "email": "john@example.com"}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Forge Hub -->
+        <div class="screenshot forge" id="forge">
+            <div class="browser-chrome">
+                <div class="dots">
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+                </div>
+                <div class="url-bar">🔒 https://tomo-forge-hub.vercel.app</div>
+            </div>
+            <div class="content">
+                <h1>TOMO Forge Hub</h1>
+                <p style="font-size: 28px; color: #94a3b8; margin-bottom: 20px;">Content Management System for TOMO Academy</p>
+                <p style="font-size: 20px; color: #64748b;">Team Management • Video Hub • Task Board • Analytics</p>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="value">14+</div>
+                        <div class="label">Team Members</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="value">234</div>
+                        <div class="label">Videos Managed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="value">125K+</div>
+                        <div class="label">Subscribers</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="value">99%</div>
+                        <div class="label">Uptime</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- IB Hub -->
+        <div class="screenshot ib" id="ib">
+            <div class="browser-chrome">
+                <div class="dots">
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+                </div>
+                <div class="url-bar">🔒 https://ib-online-resource-hub.vercel.app</div>
+            </div>
+            <div class="content">
+                <div class="login-box">
+                    <h1>IB STUDIOZ</h1>
+                    <p>Enterprise Learning Platform</p>
+                    <p style="font-size: 18px; margin-bottom: 40px;">Sign in with your corporate account</p>
+                    <button class="login-btn">🔐 Sign in with Microsoft</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Instructions for capturing screenshots:
+        // 1. Open this file in a browser (Chrome recommended)
+        // 2. Press F12 to open DevTools
+        // 3. Press Ctrl+Shift+P and type "screenshot"
+        // 4. Select "Capture node screenshot"
+        // 5. Click on each screenshot div
+        // 6. Save with the corresponding filename
+        
+        console.log('Screenshots ready! Use Chrome DevTools to capture each screenshot.');
+        console.log('Screenshots: mvk, cgpa, meow, tomo-chat, tomo-academy, curl, forge, ib');
+    </script>
+</body>
+</html>

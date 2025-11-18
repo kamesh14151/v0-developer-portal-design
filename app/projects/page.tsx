@@ -28,10 +28,10 @@ export default function ProjectsPage() {
       url: 'https://cgpa-calc-aj.vercel.app/'
     },
     {
-      title: 'Meow Chat - Real-time Messaging Platform',
-      category: 'social',
-      description: 'Modern real-time chat application with instant messaging, user authentication, online status tracking, message notifications, and seamless communication features for personal and group conversations.',
-      tech: ['Next.js', 'Real-time Chat', 'WebSocket', 'Firebase', 'Tailwind CSS'],
+      title: 'Meow AI - Intelligent Chat Assistant',
+      category: 'ai',
+      description: 'Advanced AI-powered conversational assistant similar to ChatGPT and Perplexity. Features intelligent responses, context-aware conversations, multi-turn dialogue, knowledge retrieval, and real-time AI interactions for research, coding help, and general queries.',
+      tech: ['Next.js', 'AI/ML', 'OpenAI API', 'Real-time Chat', 'Vector Search'],
       image: '/project-meow.jpg',
       url: 'https://www.meow.ajstudioz.co.in/'
     },
@@ -81,7 +81,7 @@ export default function ProjectsPage() {
     { value: 'all', label: 'All Projects' },
     { value: 'business', label: 'Business' },
     { value: 'education', label: 'Education' },
-    { value: 'social', label: 'Social & Chat' },
+    { value: 'ai', label: 'AI & Machine Learning' },
     { value: 'developer-tools', label: 'Developer Tools' },
   ]
 
