@@ -11,21 +11,20 @@ export const metadata: Metadata = {
   description: 'Premium web development and AI technology solutions. Discover Nexariq AI models: Lynxa-mini, AJ, and Hanuman S1.',
   generator: 'v0.app',
   icons: {
-    icon: [
-      {
-        url: '/AJ.svg',
-        type: 'image/svg+xml',
-      },
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/AJ.svg',
+    apple: '/AJ.svg',
+    shortcut: '/AJ.svg',
+  },
+  openGraph: {
+    title: 'AJ STUDIOZ | Premium Web Development & AI Solutions',
+    description: 'Premium web development and AI technology solutions. Discover Nexariq AI models: Lynxa-mini, AJ, and Hanuman S1.',
+    images: ['/AJ.svg'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AJ STUDIOZ | Premium Web Development & AI Solutions',
+    description: 'Premium web development and AI technology solutions. Discover Nexariq AI models: Lynxa-mini, AJ, and Hanuman S1.',
+    images: ['/AJ.svg'],
   },
 }
 
