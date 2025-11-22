@@ -16,7 +16,7 @@ export default function ProjectsPage() {
       category: 'business',
       description: 'Comprehensive logistics platform with real-time GPS tracking, live vehicle monitoring, fleet management, instant pricing calculator, and automated booking system. Features 24/7 support and insurance coverage for goods transportation and relocation services.',
       tech: ['Next.js', 'React', 'Tailwind CSS', 'GPS Tracking', 'Real-time Updates'],
-      image: '/project-mvk.jpg',
+      image: '/mvk-transports-vercel-app-1024x768desktop-0c37c6.png',
       url: 'https://mvk-transports.vercel.app/'
     },
     {
@@ -24,7 +24,7 @@ export default function ProjectsPage() {
       category: 'education',
       description: 'Smart academic performance calculator supporting multiple engineering branches including Computer Science, AI & Machine Learning, Electronics, and more. Features grade distribution visualization, arrears tracking, and instant CGPA computation with credit management.',
       tech: ['React', 'JavaScript', 'Tailwind CSS', 'Data Visualization'],
-      image: '/project-cgpa.jpg',
+      image: '/cgpa-calc-aj-vercel-app-1024x768desktop-b7b29b.png',
       url: 'https://cgpa-calc-aj.vercel.app/'
     },
     {
