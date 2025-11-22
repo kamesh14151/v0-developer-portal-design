@@ -32,7 +32,7 @@ export default function ProjectsPage() {
       category: 'ai',
       description: 'Advanced AI-powered conversational assistant similar to ChatGPT and Perplexity. Features intelligent responses, context-aware conversations, multi-turn dialogue, knowledge retrieval, and real-time AI interactions for research, coding help, and general queries.',
       tech: ['Next.js', 'AI/ML', 'OpenAI API', 'Real-time Chat', 'Vector Search'],
-      image: '/project-meow.jpg',
+      image: '/meow-ajstudioz-co-in-1024x768desktop-052090.png',
       url: 'https://www.meow.ajstudioz.co.in/'
     },
     {
@@ -142,14 +142,14 @@ export default function ProjectsPage() {
                 <div className="absolute -inset-[1px] bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500" />
                 
                 {/* Project Image */}
-                <div className="relative h-56 overflow-hidden bg-gradient-to-br from-primary/20 via-accent/10 to-transparent">
+                <div className="relative h-64 overflow-hidden bg-gradient-to-br from-background/95 via-background/90 to-background/95">
                   <Image
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
                     fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="object-contain group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-background/20" />
                   
                   {/* Category Badge */}
                   <div className="absolute top-4 left-4">
