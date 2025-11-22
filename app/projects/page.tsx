@@ -133,29 +133,30 @@ export default function ProjectsPage() {
             {filtered.map((project, index) => (
               <div
                 key={index}
-                className="group relative overflow-hidden rounded-2xl border border-border/50 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-xl hover:border-primary/50 transition-all duration-500 hover-elevate flex flex-col"
+                className="group relative overflow-hidden rounded-2xl border border-border/40 bg-gradient-to-br from-card/90 via-card/80 to-card/70 backdrop-blur-xl hover:border-primary/60 transition-all duration-500 hover-elevate flex flex-col"
                 style={{
-                  boxShadow: '0 4px 24px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05)'
+                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08)'
                 }}
               >
                 {/* Glow effect on hover */}
-                <div className="absolute -inset-[1px] bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500" />
+                <div className="absolute -inset-[1px] bg-gradient-to-r from-primary/30 via-accent/30 to-primary/30 rounded-2xl opacity-0 group-hover:opacity-100 blur-2xl transition-opacity duration-500" />
+                
+                {/* Category Badge - Positioned at top */}
+                <div className="absolute top-4 left-4 z-20">
+                  <span className="inline-block px-4 py-1.5 rounded-full bg-primary/95 backdrop-blur-md text-xs font-bold text-primary-foreground uppercase tracking-wider shadow-xl border border-primary/30">
+                    {project.category.replace('-', ' ')}
+                  </span>
+                </div>
                 
                 {/* Project Image */}
-                <div className="relative h-64 overflow-hidden bg-gradient-to-br from-background/95 via-background/90 to-background/95">
-                  <Image
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.title}
-                    fill
-                    className="object-contain group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-background/20" />
-                  
-                  {/* Category Badge */}
-                  <div className="absolute top-4 left-4">
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-primary/90 backdrop-blur-sm text-xs font-bold text-primary-foreground uppercase tracking-wider shadow-lg">
-                      {project.category.replace('-', ' ')}
-                    </span>
+                <div className="relative w-full aspect-video overflow-hidden bg-gradient-to-br from-background/98 via-background/95 to-background/98 p-4">
+                  <div className="relative w-full h-full rounded-lg overflow-hidden shadow-2xl border border-border/20">
+                    <Image
+                      src={project.image || "/placeholder.svg"}
+                      alt={project.title}
+                      fill
+                      className="object-contain group-hover:scale-[1.02] transition-transform duration-700"
+                    />
                   </div>
                 </div>
 
